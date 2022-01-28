@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="Stats">
         This is my Stats Section
         <StatsCard />
     </div>
