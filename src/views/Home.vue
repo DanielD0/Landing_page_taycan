@@ -2,7 +2,7 @@
     <div class="Home">
         <Nav />
         <MainHeader/>
-        <Presentation v-for="obj, objIndex in presentations" :key="objIndex" :content="obj"/>
+        <Presentation v-for="obj, objIndex in presentations" :key="objIndex" :content="obj" class="mb-16"/>
         <Stats/>
     </div>
 </template>

@@ -4,10 +4,10 @@
         class="flex-1">
             <div v-if="col.imgSrc" :style="`background-image:url(${col.imgSrc}); min-height:325px;` " class="h-full bg-no-repeat bg-center"
             :class= "col.contain ? 'bg-contain' : 'bg-cover' " />   
-            <div v-else class="p-8 md:p-24" :class="`bg-${col.backgroundColor} text-${content.left ? 'white' : 'black'}`">
+            <div v-else class="p-8 md:p-24" :class="`bg-${col.backgroundColor} ${content.left ? 'text-white' : 'text-black'}`">
                 <div class="mb-16">
                     <h2 class="text-4xl uppercase font-bold mb-4">{{col.title}}</h2>
-                    <div class="h-1 w-16" :class="`bg-${content.left ? 'white' : 'black'}`" />
+                    <div class="h-1 w-16" :class="`${content.left ? 'bg-white' : 'bg-black'}`" />
                 </div>
                 <p class="uppercase font-bold mb-4">{{col.subtitle}}</p>
                 <p class="font-light">{{col.description}}</p>
