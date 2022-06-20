@@ -1,9 +1,10 @@
 <template>
-    <div class="Stats bg-cover bg-no-repeat bg-bottom relative" :style="`background-image:url(${PorsheBackground}); height: 450px`">
-        <div class="w-full h-full bg-customblue opacity-75 absolute z-0"></div>
-            <div class="Stats-Components z-50 relative">
-                <p class="text-white">some text</p>
-                <StatsCard></StatsCard>
+    <div class="Stats bg-cover bg-no-repeat bg-bottom relative py-8 lg:pt-32"
+    :style="`background-image:url(${PorsheBackground}); min-height: 300px; background-position: center bottom -6rem;`">
+        <div class="w-full h-full bg-customblue opacity-75 absolute top-0 left-0 z-0"></div>
+            <div class="Stats-Components flex flex-col lg:flex-row 
+            items-center justify-between w-full z-50 relative lg:absolute p-8"> 
+                <StatsCard v-for="obj, objIndex in cards" :key="objIndex" :content="obj"></StatsCard>
             </div>
     </div>
 </template>
@@ -22,8 +23,9 @@ export default{
         StatsCard
     },
     setup(){
-    
-    const data = reactive([{
+    const data = reactive({
+    PorsheBackground,
+    cards: [{
       imgSrc: Plug,
       title: "Range",
       descriptcion: "301 miles<br>(25.4-20.4 kWh/100 miles)"  
@@ -42,7 +44,7 @@ export default{
       imgSrc: Weight,
       title: "Weight",
       descriptcion: "2,050 kg"  
-    }])
+    }]})
     return{
         ...toRefs(data)
     }

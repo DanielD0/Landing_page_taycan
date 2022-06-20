@@ -1,9 +1,11 @@
 <template>
     <div class="Home">
-        <Nav />
+        <Nav/>
         <MainHeader/>
         <Presentation v-for="obj, objIndex in presentations" :key="objIndex" :content="obj" class="mb-16"/>
         <Stats/>
+        <Tabs/>
+        <Footer/>
     </div>
 </template>
 
