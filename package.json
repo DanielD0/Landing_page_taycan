@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
+    "deploy": "git push heroku master",
     "build": "vite build",
     "preview": "vite preview",
     "start": "node serve.js"
